@@ -1,6 +1,7 @@
 package ro.sda.hypermarket.core.entity;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 
 @Entity
@@ -49,5 +50,21 @@ public class SaleProduct {
 
     public void setSale_Id(String sale_Id) {
         Sale_Id = sale_Id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SaleProduct that = (SaleProduct) o;
+        return Objects.equals(id, that.id) &&
+                Objects.equals(Product_Id, that.Product_Id) &&
+                Objects.equals(Quantity, that.Quantity) &&
+                Objects.equals(Sale_Id, that.Sale_Id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, Product_Id, Quantity, Sale_Id);
     }
 }
