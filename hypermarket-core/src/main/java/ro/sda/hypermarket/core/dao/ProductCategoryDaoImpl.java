@@ -4,8 +4,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
-import ro.sda.hypermarket.core.entity.Department;
-import ro.sda.hypermarket.core.entity.Employee;
 import ro.sda.hypermarket.core.entity.ProductCategory;
 
 import javax.persistence.criteria.CriteriaQuery;
@@ -25,40 +23,40 @@ public class ProductCategoryDaoImpl  implements ProductCategoryDao {
     }
 
     @Override
-    public Employee getById(Long id) {
-        return getCurrentSession().byId(Employee.class).getReference(id);
+    public ProductCategory getById(Long id) {
+        return getCurrentSession().byId(ProductCategory.class).getReference(id);
     }
 
     @Override
-    public List<Employee> getAll() {
+    public List<ProductCategory> getAll() {
         Session session = sessionFactory.getCurrentSession();
-        CriteriaQuery<Employee> criteriaQuery = session.getCriteriaBuilder().createQuery(Employee.class);
-        criteriaQuery.from(Department.class);
-        List<Employee> allEmployees = session.createQuery(criteriaQuery).getResultList();
-        return allEmployees;
+        CriteriaQuery<ProductCategory> criteriaQuery = session.getCriteriaBuilder().createQuery(ProductCategory.class);
+        criteriaQuery.from(ProductCategory.class);
+        List<ProductCategory> allProductCategory = session.createQuery(criteriaQuery).getResultList();
+        return allProductCategory;
     }
 
     @Override
-    public Employee createEmployee(Employee employee) {
-        getCurrentSession().save(employees);
-        return employee;
+    public ProductCategory createProductCategory(ProductCategory productCategory) {
+        getCurrentSession().save(productCategory);
+        return productCategory;
     }
 
     @Override
-    public Employee updateEmployee(Employee employee) {
+    public ProductCategory updateProductCategory(ProductCategory productCategory) {
         Transaction tr = sessionFactory.getCurrentSession().beginTransaction();
-        Employee employee1 = getById(employee.getId());
-        sessionFactory.getCurrentSession().merge(employee1);
+        ProductCategory productCategory1 = getById(productCategory.getId());
+        sessionFactory.getCurrentSession().merge(productCategory1);
         sessionFactory.getCurrentSession().flush();
         tr.commit();
-        return employee1;
+        return productCategory1;
     }
 
     @Override
-    public void deleteEmployee(Employee employee) {
+    public void deleteProductCategory(ProductCategory productCategory) {
         Transaction tr = sessionFactory.getCurrentSession().beginTransaction();
-        Employee employee1 = getById(employee.getId());
-        sessionFactory.getCurrentSession().delete(employee1);
+        ProductCategory productCategory1 = getById(productCategory.getId());
+        sessionFactory.getCurrentSession().delete(productCategory1);
         sessionFactory.getCurrentSession().flush();
         tr.commit();
     }
