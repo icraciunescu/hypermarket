@@ -2,11 +2,11 @@ package Dao;
 
         import org.hibernate.Session;
         import ro.sda.hypermarket.core.entity.Department;
-        import ro.sda.hypermarket.core.entity.Supplier;
 
         import java.util.List;
 
 public interface DepartmentDaoImpl {
+
     Session getCurrentSession();
 
     Department getById(Long id);
