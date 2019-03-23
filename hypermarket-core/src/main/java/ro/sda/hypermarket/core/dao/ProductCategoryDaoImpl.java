@@ -1,4 +1,4 @@
-package Dao;
+package ro.sda.hypermarket.core.dao;
 
 public class ProductCategoryDaoImpl {
 }
