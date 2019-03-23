@@ -7,17 +7,15 @@ import java.util.List;
 
 public interface ClientDao {
 
-    Session getCurrentSession();
-
     Client getById(Long id);
 
     List<Client> getAll();
 
     Client createClient(Client client);
 
-    void updateClient(Client client);
-
     void deleteClient(Client client);
 
-   // void readClient(Client client);
+    Client updateClient(Client client);
+
+    // void readClient(Client client);
 }

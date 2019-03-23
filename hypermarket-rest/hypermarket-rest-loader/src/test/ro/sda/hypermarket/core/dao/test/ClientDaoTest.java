@@ -36,11 +36,13 @@ public class ClientDaoTest {
 
     @Test
     public void testUpdate(){
-        Client cli = clientDao.updateClient();
+        Client fromDb = clientDao.getById(1l);
+        fromDb.setName("ghotza");
+        Client cli = clientDao.updateClient(fromDb);
         System.out.println("Update " + cli + " to:");
         cli.setName("Ionut");
         clientDao.updateClient(cli);
-        Client expected = clientDao.updateClient(1L);
+        Client expected = clientDao.updateClient(cli);
         Client actual = cli;
         System.out.println(expected.toString());
         Assert.assertEquals(expected, actual);

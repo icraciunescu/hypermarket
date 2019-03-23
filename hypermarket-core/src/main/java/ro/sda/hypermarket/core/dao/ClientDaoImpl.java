@@ -20,7 +20,6 @@ public class ClientDaoImpl implements ClientDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    @Override
     public Session getCurrentSession() {
         return sessionFactory.getCurrentSession();
     }
@@ -41,7 +40,7 @@ public class ClientDaoImpl implements ClientDao {
 
     @Override
     public Client createClient(Client client) {
-        getCurrentSession().save(clients);
+        getCurrentSession().save(client);
         return client;
     }
 //    @Override
@@ -51,12 +50,13 @@ public class ClientDaoImpl implements ClientDao {
 //    }
 
     @Override
-    public void updateClient(Client client) {
+    public Client updateClient(Client client) {
         Transaction tr = sessionFactory.getCurrentSession().beginTransaction();
         Client client1 = getById(client.getId());
         sessionFactory.getCurrentSession().merge(client1);
         sessionFactory.getCurrentSession().flush();
         tr.commit();
+        return  client1;
     }
 
     @Override
