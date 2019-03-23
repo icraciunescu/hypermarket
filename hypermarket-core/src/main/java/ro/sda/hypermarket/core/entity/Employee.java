@@ -34,11 +34,11 @@ public class Employee {
     @Column(name = "city", length = 40, nullable = false)
     private String city;
 
-    @ManyToOne(cascade={CascadeType.MERGE})
-    @JoinColumn(name="manager_id")
+    @ManyToOne(cascade = {CascadeType.MERGE})
+    @JoinColumn(name = "manager_id")
     private Employee manager;
 
-    @OneToMany(mappedBy="manager")
+    @OneToMany(mappedBy = "manager")
     private Set<Employee> subordinates = new HashSet<>();
 
     public Long getId() {
@@ -49,6 +49,8 @@ public class Employee {
         this.id = id;
     }
 
+
+//fhehrshiefiehrkesheheruheruu
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
