@@ -43,11 +43,6 @@ public class ClientDaoImpl implements ClientDao {
         getCurrentSession().save(client);
         return client;
     }
-//    @Override
-//    public Client readClient(Long clientId) {
-//        Client client = (Client) sessionFactory.getCurrentSession().get(Client.class, clientId);
-//        return client;
-//    }
 
     @Override
     public Client updateClient(Client client) {

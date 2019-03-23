@@ -36,7 +36,7 @@ public class ClientDaoTest {
 
     @Test
     public void testUpdate(){
-        Client fromDb = clientDao.getById(1l);
+        Client fromDb = clientDao.getById(3l);
         fromDb.setName("ghotza");
         Client cli = clientDao.updateClient(fromDb);
         System.out.println("Update " + cli + " to:");
@@ -50,7 +50,7 @@ public class ClientDaoTest {
 
     @Test
     public void testDelete(){
-        Client client = clientDao.getById(1L);
+        Client client = clientDao.getById(3L);
         clientDao.deleteClient(client);
         Assert.assertNotNull(client);
     }
