@@ -1,7 +1,7 @@
 package ro.sda.hypermarket.core.dao;
 
 import org.hibernate.Session;
-import ro.sda.hypermarket.core.entity.Department;
+
 import ro.sda.hypermarket.core.entity.Employee;
 
 import java.util.List;
@@ -10,11 +10,11 @@ public interface EmployeeDao {
 
     Session getCurrentSession();
 
-    Department getById(Long id);
+    Employee getById(Long id);
 
-    List<Department> getAll();
+    List<Employee> getAll();
 
-    Department createEmployee(Employee employee);
+    Employee createEmployee(Employee employee);
 
     void updateEmployee(Employee employee);
 
