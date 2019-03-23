@@ -6,7 +6,6 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import ro.sda.hypermarket.core.entity.Product;
-import ro.sda.hypermarket.core.entity.ProductCategory;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
@@ -14,7 +13,7 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class ProductDaoImpl   implements ProductDao {
+public class ProductDaoImpl implements ProductDao {
 
     private List<Product> products = new ArrayList<>();
 
@@ -35,7 +34,7 @@ public class ProductDaoImpl   implements ProductDao {
     public List<Product> getAll() {
         Session session = sessionFactory.getCurrentSession();
         CriteriaQuery<Product> criteriaQuery = session.getCriteriaBuilder().createQuery(Product.class);
-        criteriaQuery.from(ProductCategory.class);
+        criteriaQuery.from(Product.class);
         List<Product> allProduct = session.createQuery(criteriaQuery).getResultList();
         return allProduct;
     }

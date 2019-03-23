@@ -5,7 +5,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import ro.sda.hypermarket.core.entity.Department;
 import ro.sda.hypermarket.core.entity.Employee;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.transaction.Transactional;
@@ -35,7 +34,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public List<Employee> getAll() {
         Session session = sessionFactory.getCurrentSession();
         CriteriaQuery<Employee> criteriaQuery = session.getCriteriaBuilder().createQuery(Employee.class);
-        criteriaQuery.from(Department.class);
+        criteriaQuery.from(Employee.class);
         List<Employee> allEmployees = session.createQuery(criteriaQuery).getResultList();
         return allEmployees;
     }
