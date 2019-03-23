@@ -16,7 +16,7 @@ public interface ProductCategoryDao {
 
     ProductCategory createProductCategory(ProductCategory productCategory);
 
-    void updateProductCategory(ProductCategory productCategory);
+    ProductCategory updateProductCategory(ProductCategory productCategory);
 
     void deleteProductCategory(ProductCategory productCategory);
 

@@ -47,12 +47,13 @@ public class EmployeeDaoImpl implements EmployeeDao {
     }
 
     @Override
-    public void updateEmployee(Employee employee) {
+    public Employee updateEmployee(Employee employee) {
         Transaction tr = sessionFactory.getCurrentSession().beginTransaction();
         Employee employee1 = getById(employee.getId());
         sessionFactory.getCurrentSession().merge(employee1);
         sessionFactory.getCurrentSession().flush();
         tr.commit();
+        return employee1;
     }
 
     @Override

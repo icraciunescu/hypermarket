@@ -49,12 +49,13 @@ public class SupplierDaoImpl implements SupplierDao {
     }
 
     @Override
-    public void updateSupplier(Supplier supplier) {
+    public Supplier updateSupplier(Supplier supplier) {
         Transaction tr = sessionFactory.getCurrentSession().beginTransaction();
         Supplier supplier1 = getById(supplier.getId());
         sessionFactory.getCurrentSession().merge(supplier1);
         sessionFactory.getCurrentSession().flush();
         tr.commit();
+        return supplier1;
     }
 
     @Override

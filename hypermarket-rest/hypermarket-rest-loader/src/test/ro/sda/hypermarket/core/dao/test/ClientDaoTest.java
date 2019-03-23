@@ -37,7 +37,7 @@ public class ClientDaoTest {
     @Test
     public void testUpdate(){
         Client fromDb = clientDao.getById(3l);
-        fromDb.setName("ghotza");
+        fromDb.setName("Vasile");
         Client cli = clientDao.updateClient(fromDb);
         System.out.println("Update " + cli + " to:");
         cli.setName("Ionut");

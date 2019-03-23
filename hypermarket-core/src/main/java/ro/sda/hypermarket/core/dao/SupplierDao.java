@@ -13,7 +13,7 @@ public interface SupplierDao {
     Supplier getById(Long id);
     List<Supplier> getAll();
     Supplier createSupplier(Supplier supplier);
-    void updateSupplier(Supplier supplier);
+    Supplier updateSupplier(Supplier supplier);
     void deleteSupplier(Supplier supplier);
 
 }

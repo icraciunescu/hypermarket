@@ -14,7 +14,7 @@ public interface DepartmentDao {
 
     Department createDepartment(Department department);
 
-    void updateDepartment(Department department);
+    Department updateDepartment(Department department);
 
     void deleteDepartment(Department department);
 }

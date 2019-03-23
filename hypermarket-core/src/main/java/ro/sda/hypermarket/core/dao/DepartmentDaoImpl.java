@@ -46,12 +46,13 @@ public class DepartmentDaoImpl implements DepartmentDao {
     }
 
     @Override
-    public void updateDepartment(Department department) {
+    public Department updateDepartment(Department department) {
         Transaction tr = sessionFactory.getCurrentSession().beginTransaction();
         Department department1 = getById(department.getId());
         sessionFactory.getCurrentSession().merge(department1);
         sessionFactory.getCurrentSession().flush();
         tr.commit();
+        return department1;
     }
 
     @Override

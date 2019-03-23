@@ -51,7 +51,7 @@ public class ClientDaoImpl implements ClientDao {
         sessionFactory.getCurrentSession().merge(client1);
         sessionFactory.getCurrentSession().flush();
         tr.commit();
-        return  client1;
+        return client1;
     }
 
     @Override
