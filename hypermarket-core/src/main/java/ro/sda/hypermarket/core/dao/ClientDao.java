@@ -2,6 +2,7 @@ package ro.sda.hypermarket.core.dao;
 
 import org.hibernate.Session;
 import ro.sda.hypermarket.core.entity.Client;
+
 import java.util.List;
 
 public interface ClientDao {
@@ -18,4 +19,5 @@ public interface ClientDao {
 
     void deleteClient(Client client);
 
+   // void readClient(Client client);
 }
