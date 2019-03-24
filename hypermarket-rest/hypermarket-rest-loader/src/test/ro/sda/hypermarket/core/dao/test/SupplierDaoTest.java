@@ -7,48 +7,49 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
-import ro.sda.hypermarket.core.dao.ClientDao;
+import ro.sda.hypermarket.core.dao.SupplierDao;
 import ro.sda.hypermarket.core.entity.Client;
+import ro.sda.hypermarket.core.entity.Supplier;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:/spring-config/spring-root.xml")
 @Transactional
-public class ClientDaoTest {
+public class SupplierDaoTest {
 
     @Autowired
-    private ClientDao clientDao;
+    private SupplierDao supplierDao;
 
 
     @Test
     @Rollback(false)
     public void testCreate(){
-        Client client = new Client();
-        client.setName("Vasile");
-        clientDao.createClient(client);
-        Assert.assertNotNull(client);
+        Supplier suppplier = new Supplier();
+        suppplier.setName("india");
+       supplierDao.createSupplier(suppplier);
+        Assert.assertNotNull(suppplier);
     }
 
     @Test
     @Rollback(false)
     public void testRead(){
-        Client cli = clientDao.getById(8L);
-        Long actual = cli.getId();
+        Supplier sup = supplierDao.getById(8L);
+        Long actual = sup.getId();
         Long expected = 8L;
-        System.out.println(cli.toString());
+        System.out.println(sup.toString());
         Assert.assertEquals(expected, actual);
     }
 
     @Test
     @Rollback(false)
     public void testUpdate(){
-        Client fromDb = clientDao.getById(8L);
-        fromDb.setName("Vasile");
-        Client cli = clientDao.updateClient(fromDb);
-        System.out.println("Update " + cli + " to:");
-        cli.setName("Ionut");
-        clientDao.updateClient(cli);
-        Client expected = clientDao.updateClient(cli);
-        Client actual = cli;
+        Supplier fromDb = supplierDao.getById(8L);
+        fromDb.setName("india");
+        Supplier sup = supplierDao.updateSupplier(fromDb);
+        System.out.println("Update " + sup + " to:");
+        sup.setName("china");
+        supplierDao.updateSupplier(sup);
+        Supplier expected = supplierDao.updateSupplier(sup);
+        Supplier actual = sup;
         System.out.println(expected.toString());
         Assert.assertEquals(expected, actual);
     }
@@ -56,8 +57,8 @@ public class ClientDaoTest {
     @Test
     @Rollback(false)
     public void testDelete(){
-        Client client = clientDao.getById(3L);
-        clientDao.deleteClient(client);
-        Assert.assertNotNull(client);
+        Supplier supplier = supplierDao.getById(3L);
+        supplierDao.deleteSupplier(supplier);
+        Assert.assertNotNull(supplier);
     }
 }

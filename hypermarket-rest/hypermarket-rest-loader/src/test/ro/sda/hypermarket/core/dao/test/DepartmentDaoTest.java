@@ -3,6 +3,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +21,7 @@ public class DepartmentDaoTest {
     private DepartmentDao departmentDao;
 
     @Test
+    @Rollback(false)
     public void testCreate(){
 
         Department department= new Department();
@@ -29,6 +31,7 @@ public class DepartmentDaoTest {
     }
 
     @Test
+    @Rollback(false)
     public void testRead(){
         Department dep = departmentDao.getById(8L);
         Long actual = dep.getId();
@@ -38,6 +41,7 @@ public class DepartmentDaoTest {
     }
 
     @Test
+    @Rollback(false)
     public void testUpdate(){
         Department fromDb = departmentDao.getById(8L);
         fromDb.setName("financiar");
@@ -52,6 +56,7 @@ public class DepartmentDaoTest {
     }
 
     @Test
+    @Rollback(false)
     public void testDelete(){
         Department department = departmentDao.getById(3L);
         departmentDao.deleteDepartment(department);
