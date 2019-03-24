@@ -14,7 +14,7 @@ import ro.sda.hypermarket.core.service.SupplierService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:/spring-config/spring-root.xml")
 @Transactional
-public class SupplierDaoTest{
+public class SupplierServiceTest {
 
 @Autowired
 private SupplierService supplierService;
