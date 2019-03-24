@@ -1,13 +1,14 @@
 package ro.sda.hypermarket.core.entity;
 
+import ro.sda.hypermarket.core.base.BaseEntity;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 
 @Entity
 @Table(name = "sale_product", schema = "hypermarket")
-public class SaleProduct {
-
+public class SaleProduct extends BaseEntity {
 
     @Column(name = "product_id", length = 40, nullable = false)
     private String Product_Id;
@@ -47,7 +48,7 @@ public class SaleProduct {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SaleProduct that = (SaleProduct) o;
-        return Objects.equals(id, that.id) &&
+        return Objects.equals(super.getId(), that.getId()) &&
                 Objects.equals(Product_Id, that.Product_Id) &&
                 Objects.equals(Quantity, that.Quantity) &&
                 Objects.equals(Sale_Id, that.Sale_Id);
@@ -55,6 +56,6 @@ public class SaleProduct {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, Product_Id, Quantity, Sale_Id);
+        return Objects.hash(super.getId(), Product_Id, Quantity, Sale_Id);
     }
 }

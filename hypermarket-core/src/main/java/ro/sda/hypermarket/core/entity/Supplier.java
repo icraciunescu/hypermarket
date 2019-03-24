@@ -1,13 +1,15 @@
 package ro.sda.hypermarket.core.entity;
 
-import javax.persistence.*;
+import ro.sda.hypermarket.core.base.BaseEntity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Objects;
 
 @Entity
 @Table(name = "suppliers", schema = "hypermarket")
-public class Supplier {
-
-
+public class Supplier extends BaseEntity {
 
     @Column(name = "name", length = 40, nullable = false)
     private String name;
@@ -47,7 +49,7 @@ public class Supplier {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Supplier supplier = (Supplier) o;
-        return id.equals(supplier.id) &&
+        return super.getId() == supplier.getId() &&
                 name.equals(supplier.name) &&
                 contact_no.equals(supplier.contact_no) &&
                 city.equals(supplier.city);
@@ -55,6 +57,6 @@ public class Supplier {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, contact_no, city);
+        return Objects.hash(super.getId(), name, contact_no, city);
     }
 }
