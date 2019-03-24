@@ -19,8 +19,11 @@ public class SupplierServiceImpl implements SupplierService {
     private SupplierRepository supplierRepository;
 
     @Override
-    public Supplier getById(Long id) {
-        return supplierDao.getById(id);
+    public Supplier getById(Long id, boolean useHibernate) {
+        if(useHibernate) {
+            return supplierDao.getById(id);
+        }
+        return supplierRepository.findById(id);
     }
 
     @Override

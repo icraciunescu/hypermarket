@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 import ro.sda.hypermarket.core.entity.Supplier;
 import ro.sda.hypermarket.core.service.SupplierService;
 
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:/spring-config/spring-root.xml")
 @Transactional
@@ -19,7 +18,6 @@ public class SupplierServiceTest {
 
     @Autowired
     private SupplierService supplierService;
-
 
     @Test
     @Rollback(false)
@@ -35,7 +33,7 @@ public class SupplierServiceTest {
     @Test
     @Rollback(false)
     public void testRead() {
-        Supplier sup = supplierService.getById(1L);
+        Supplier sup = supplierService.getById(1L, false);
         Long actual = sup.getId();
         Long expected = 1L;
         System.out.println(sup.toString());
@@ -45,7 +43,7 @@ public class SupplierServiceTest {
     @Test
     @Rollback(false)
     public void testUpdate() {
-        Supplier fromDb = supplierService.getById(1L);
+        Supplier fromDb = supplierService.getById(1L, false);
         fromDb.setName("india");
         Supplier sup = supplierService.updateSupplier(fromDb);
         System.out.println("Update " + sup + " to:");
@@ -60,7 +58,7 @@ public class SupplierServiceTest {
     @Test
     @Rollback(false)
     public void testDelete() {
-        Supplier supplier = supplierService.getById(1L);
+        Supplier supplier = supplierService.getById(1L, false);
         supplierService.deleteSupplier(supplier);
         Assert.assertNotNull(supplier);
     }

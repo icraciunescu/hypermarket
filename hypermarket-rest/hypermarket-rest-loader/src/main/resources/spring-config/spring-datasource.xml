@@ -14,7 +14,7 @@
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="${database.driverClassName}" />
-		<property name="url" value="${database.url}" />
+		<property name="url" value="${database.url}?useSSL=false" />
 		<property name="username" value="${database.userName}" />
 		<property name="password" value="${database.password}" />
 		<property name="maxIdle" value="${database.maxIdle}" />
