@@ -72,6 +72,7 @@ public class Product extends BaseEntity {
         return vending_price;
     }
 
+
     public void setVending_price(BigDecimal vending_price) {
         this.vending_price = vending_price;
     }

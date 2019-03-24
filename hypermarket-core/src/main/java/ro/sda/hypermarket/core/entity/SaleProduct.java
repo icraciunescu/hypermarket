@@ -16,6 +16,7 @@ public class SaleProduct extends BaseEntity {
     @Column(name = "quantity", length = 40, nullable = false)
     private String Quantity;
 
+
     @Column(name = "sale_id", length = 40, nullable = false)
     private String Sale_Id;
 
