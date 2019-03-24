@@ -7,9 +7,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "sales", schema = "hypermarket")
 public class Sales {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
 
     @Column(name = "number", length = 40, nullable = false)
     private Long number;
@@ -22,14 +20,6 @@ public class Sales {
 
     @Column(name = "employee_id", length = 40, nullable = false)
     private Integer employee_id;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Long getNumber() {
         return number;

@@ -7,9 +7,7 @@ import java.util.Objects;
 @Table(name = "suppliers", schema = "hypermarket")
 public class Supplier {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
 
     @Column(name = "name", length = 40, nullable = false)
     private String name;
@@ -19,14 +17,6 @@ public class Supplier {
 
     @Column(name = "city", length = 40, nullable = false)
     private String city;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
