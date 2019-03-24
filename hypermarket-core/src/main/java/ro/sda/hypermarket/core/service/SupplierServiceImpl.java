@@ -20,7 +20,6 @@ public class SupplierServiceImpl implements SupplierService {
     @Autowired
     private SupplierRepository supplierRepository;
 
-
     @Override
     public Supplier getById(Long id) {
         return supplierDao.getById(id);
