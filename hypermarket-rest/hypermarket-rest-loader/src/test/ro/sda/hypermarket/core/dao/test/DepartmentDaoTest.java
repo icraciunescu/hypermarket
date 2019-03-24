@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
-import ro.sda.hypermarket.core.dao.ClientDao;
 import ro.sda.hypermarket.core.dao.DepartmentDao;
-import ro.sda.hypermarket.core.entity.Client;
 import ro.sda.hypermarket.core.entity.Department;
 
 @RunWith(SpringJUnit4ClassRunner.class)
