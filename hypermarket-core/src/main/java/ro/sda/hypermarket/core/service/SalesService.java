@@ -8,7 +8,7 @@ public interface SalesService {
 
     Sales getById(Long id);
     List<Sales> getAll();
-    Sales createSales(Sales sales);
+    Sales createSales(Sales sales, boolean useHibernate);
     Sales updateSales(Sales sales);
     void deleteSales(Sales sales);
 

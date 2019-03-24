@@ -8,7 +8,7 @@ public interface EmployeeService {
 
     Employee getById(Long id);
     List<Employee> getAll();
-    Employee createEmployee(Employee employee);
+    Employee createEmployee(Employee employee, boolean useHibernate);
     Employee updateEmployee(Employee employee);
     void deleteEmployee(Employee employee);
 

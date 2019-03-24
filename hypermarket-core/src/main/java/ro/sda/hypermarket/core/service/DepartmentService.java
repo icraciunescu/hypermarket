@@ -8,7 +8,7 @@ public interface DepartmentService {
 
     Department getById(Long id);
     List<Department> getAll();
-    Department createDepartment(Department department);
+    Department createDepartment(Department department, boolean useHibernate);
     Department updateDepartment(Department department);
     void deleteDepartment(Department department);
 

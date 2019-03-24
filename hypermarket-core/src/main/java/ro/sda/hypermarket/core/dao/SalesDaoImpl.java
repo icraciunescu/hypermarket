@@ -4,12 +4,16 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import ro.sda.hypermarket.core.entity.Sales;
 
 import javax.persistence.criteria.CriteriaQuery;
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
+@Transactional
 public class SalesDaoImpl implements SalesDao {
 
     private List<Sales> sales = new ArrayList<>();

@@ -8,7 +8,7 @@ public interface ClientService {
 
     Client getById(Long id);
     List<Client> getAll();
-    Client createClient(Client client);
+    Client createClient(Client client, boolean useHibernate);
     Client updateClient(Client client);
     void deleteClient(Client client);
 
