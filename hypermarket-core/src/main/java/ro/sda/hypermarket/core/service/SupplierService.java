@@ -12,4 +12,5 @@ public interface SupplierService {
     Supplier updateSupplier(Supplier supplier);
     void deleteSupplier(Supplier supplier);
 
+
 }

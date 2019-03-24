@@ -5,6 +5,4 @@ import ro.sda.hypermarket.core.entity.SaleProduct;
 
 public interface SaleProductRepository extends EntityRepository<SaleProduct> {
 
-    public SaleProduct findByName(String name);
-
 }

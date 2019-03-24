@@ -5,6 +5,4 @@ import ro.sda.hypermarket.core.entity.Client;
 
 public interface ClientRepository extends EntityRepository<Client> {
 
-    public Client findByName(String name);
-
 }

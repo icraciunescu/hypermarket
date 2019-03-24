@@ -10,9 +10,4 @@ import java.util.List;
 public interface SupplierRepository extends EntityRepository<Supplier> {
 
     public Supplier findByName(String name);
-
-    @Query(value = "aici e querry-ul meu HQL")
-//    @Query(value = "aici e querry-ul meu SQL", native = true)
-    public List<Supplier> unNumeDeMetoda(String param1, String param2);
-
 }

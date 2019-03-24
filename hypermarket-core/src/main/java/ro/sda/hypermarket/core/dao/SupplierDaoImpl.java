@@ -9,14 +9,11 @@ import ro.sda.hypermarket.core.entity.Supplier;
 
 import javax.persistence.criteria.CriteriaQuery;
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 @Transactional
 public class SupplierDaoImpl implements SupplierDao {
-
-    private List<Supplier> suppliers = new ArrayList<>();
 
     @Autowired
     private SessionFactory sessionFactory;

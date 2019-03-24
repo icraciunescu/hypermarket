@@ -10,38 +10,29 @@ import java.util.Objects;
 
 
 @Entity
-
 @Table(name = "suppliers", schema = "hypermarket")
-
 public class Supplier extends BaseEntity {
 
 
     @Column(name = "name", length = 40, nullable = false)
-
     private String name;
 
 
     @Column(name = "contact_no", length = 40, nullable = false)
-
     private String contact_no;
 
 
     @Column(name = "city", length = 40, nullable = false)
-
     private String city;
 
 
     public String getName() {
-
         return name;
-
     }
 
 
     public void setName(String name) {
-
         this.name = name;
-
     }
 
 

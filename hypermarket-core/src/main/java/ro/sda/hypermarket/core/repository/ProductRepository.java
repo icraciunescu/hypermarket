@@ -5,6 +5,5 @@ import ro.sda.hypermarket.core.entity.Product;
 
 public interface ProductRepository extends EntityRepository<Product> {
 
-    public Product findByName(String name);
 
 }

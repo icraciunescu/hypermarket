@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Service("supplierService")
-@Transactional(readOnly = true, rollbackFor = Exception.class)
+@Transactional(rollbackFor = Exception.class)
 public class SupplierServiceImpl implements SupplierService {
 
     @Autowired
