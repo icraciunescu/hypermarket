@@ -32,8 +32,12 @@ public class SupplierServiceImpl implements SupplierService {
     }
 
     @Override
-    public Supplier createSupplier(Supplier supplier) {
-        return supplierDao.createSupplier(supplier);
+    @Transactional
+    public Supplier createSupplier(Supplier supplier, boolean useHibernate) {
+        if (useHibernate) {
+            return supplierDao.createSupplier(supplier);
+        }
+        return supplierRepository.save(supplier);
     }
 
     @Override

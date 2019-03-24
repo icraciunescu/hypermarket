@@ -1,21 +1,12 @@
 package ro.sda.hypermarket.core.entity;
 
 
-
 import ro.sda.hypermarket.core.base.BaseEntity;
 
-
-
 import javax.persistence.Column;
-
 import javax.persistence.Entity;
-
 import javax.persistence.Table;
-
 import java.util.Objects;
-
-
-
 
 
 @Entity
@@ -25,11 +16,9 @@ import java.util.Objects;
 public class Supplier extends BaseEntity {
 
 
-
     @Column(name = "name", length = 40, nullable = false)
 
     private String name;
-
 
 
     @Column(name = "contact_no", length = 40, nullable = false)
@@ -37,11 +26,9 @@ public class Supplier extends BaseEntity {
     private String contact_no;
 
 
-
     @Column(name = "city", length = 40, nullable = false)
 
     private String city;
-
 
 
     public String getName() {
@@ -51,13 +38,11 @@ public class Supplier extends BaseEntity {
     }
 
 
-
     public void setName(String name) {
 
         this.name = name;
 
     }
-
 
 
     public String getContact_no() {
@@ -67,13 +52,11 @@ public class Supplier extends BaseEntity {
     }
 
 
-
     public void setContact_no(String contact_no) {
 
         this.contact_no = contact_no;
 
     }
-
 
 
     public String getCity() {
@@ -83,13 +66,11 @@ public class Supplier extends BaseEntity {
     }
 
 
-
     public void setCity(String city) {
 
         this.city = city;
 
     }
-
 
 
     @Override
@@ -111,7 +92,6 @@ public class Supplier extends BaseEntity {
                 city.equals(supplier.city);
 
     }
-
 
 
     @Override
