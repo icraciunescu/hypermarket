@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Objects;
 
+
 @Entity
 @Table(name = "suppliers", schema = "hypermarket")
 public class Supplier extends BaseEntity {

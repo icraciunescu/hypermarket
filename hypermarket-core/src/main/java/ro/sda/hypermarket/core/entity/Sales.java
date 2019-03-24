@@ -54,6 +54,7 @@ public class Sales extends BaseEntity {
         this.employee_id = employee_id;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
