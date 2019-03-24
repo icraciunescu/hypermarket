@@ -6,9 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ro.sda.hypermarket.core.dao.SupplierDao;
 import ro.sda.hypermarket.core.entity.Supplier;
 import ro.sda.hypermarket.core.repository.SupplierRepository;
-
 import java.util.List;
-
 
 @Service("supplierService")
 @Transactional(readOnly = true, rollbackFor = Exception.class)
