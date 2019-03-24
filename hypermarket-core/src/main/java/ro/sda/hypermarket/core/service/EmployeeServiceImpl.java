@@ -8,7 +8,7 @@ import ro.sda.hypermarket.core.entity.Employee;
 import ro.sda.hypermarket.core.repository.EmployeeRepository;
 import java.util.List;
 
-@Service("supplierService")
+@Service("employeeService")
 @Transactional(readOnly = true, rollbackFor = Exception.class)
 public class EmployeeServiceImpl implements EmployeeService {
 

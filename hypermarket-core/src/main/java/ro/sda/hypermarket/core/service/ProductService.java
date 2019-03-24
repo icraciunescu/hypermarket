@@ -1,7 +1,6 @@
 package ro.sda.hypermarket.core.service;
 
 import ro.sda.hypermarket.core.entity.Product;
-
 import java.util.List;
 
 public interface ProductService {

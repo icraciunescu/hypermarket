@@ -8,7 +8,7 @@ import ro.sda.hypermarket.core.entity.Client;
 import ro.sda.hypermarket.core.repository.ClientRepository;
 import java.util.List;
 
-@Service("supplierService")
+@Service("clientService")
 @Transactional(readOnly = true, rollbackFor = Exception.class)
 public class ClientServiceImpl implements ClientService {
 
@@ -47,10 +47,3 @@ public class ClientServiceImpl implements ClientService {
 
     }
 }
-
-
-
-//package ro.sda.hypermarket.core.service;
-//
-//public class ClientServiceImpl {
-//}

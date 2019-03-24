@@ -6,10 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ro.sda.hypermarket.core.dao.ProductDao;
 import ro.sda.hypermarket.core.entity.Product;
 import ro.sda.hypermarket.core.repository.ProductRepository;
-
-
 import java.util.List;
-
 
 @Service("productService")
 @Transactional(readOnly = true, rollbackFor = Exception.class)

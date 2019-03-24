@@ -5,7 +5,6 @@ import java.util.List;
 
 public interface SalesService {
 
-
     Sales getById(Long id);
     List<Sales> getAll();
     Sales createSales(Sales sales, boolean useHibernate);

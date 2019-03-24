@@ -6,8 +6,6 @@ import org.springframework.transaction.annotation.Transactional;
 import ro.sda.hypermarket.core.dao.SalesDao;
 import ro.sda.hypermarket.core.entity.Sales;
 import ro.sda.hypermarket.core.repository.SalesRepository;
-
-
 import java.util.List;
 
 @Service("salesService")

@@ -11,10 +11,11 @@ import org.springframework.transaction.annotation.Transactional;
 import ro.sda.hypermarket.core.entity.Supplier;
 import ro.sda.hypermarket.core.service.SupplierService;
 
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:/spring-config/spring-root.xml")
 @Transactional
-public class SupplierDaoTest {
+public class SupplierServiceTest {
 
     @Autowired
     private SupplierService supplierService;
@@ -34,9 +35,9 @@ public class SupplierDaoTest {
     @Test
     @Rollback(false)
     public void testRead() {
-        Supplier sup = supplierService.getById(8L);
+        Supplier sup = supplierService.getById(1L);
         Long actual = sup.getId();
-        Long expected = 8L;
+        Long expected = 1L;
         System.out.println(sup.toString());
         Assert.assertEquals(expected, actual);
     }
@@ -44,7 +45,7 @@ public class SupplierDaoTest {
     @Test
     @Rollback(false)
     public void testUpdate() {
-        Supplier fromDb = supplierService.getById(8L);
+        Supplier fromDb = supplierService.getById(1L);
         fromDb.setName("india");
         Supplier sup = supplierService.updateSupplier(fromDb);
         System.out.println("Update " + sup + " to:");
@@ -59,7 +60,7 @@ public class SupplierDaoTest {
     @Test
     @Rollback(false)
     public void testDelete() {
-        Supplier supplier = supplierService.getById(3L);
+        Supplier supplier = supplierService.getById(1L);
         supplierService.deleteSupplier(supplier);
         Assert.assertNotNull(supplier);
     }

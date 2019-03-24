@@ -8,7 +8,7 @@ import ro.sda.hypermarket.core.entity.Department;
 import ro.sda.hypermarket.core.repository.DepartmentRepository;
 import java.util.List;
 
-@Service("supplierService")
+@Service("departmentService")
 @Transactional(readOnly = true, rollbackFor = Exception.class)
 public class DepartmentServiceImpl implements DepartmentService {
 

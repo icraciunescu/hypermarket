@@ -8,7 +8,6 @@ import ro.sda.hypermarket.core.entity.ProductCategory;
 import ro.sda.hypermarket.core.repository.ProductCategoryRepository;
 import java.util.List;
 
-
 @Service("productCategoryService")
 @Transactional(readOnly = true, rollbackFor = Exception.class)
 public class ProductCategoryServiceImpl implements ProductCategoryService {
