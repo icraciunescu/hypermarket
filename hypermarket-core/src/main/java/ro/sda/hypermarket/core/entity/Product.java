@@ -6,9 +6,7 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "products", schema = "hypermarket")
 public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
 
     @Column(name = "name", length = 40, nullable = false)
     private String name;
@@ -28,13 +26,8 @@ public class Product {
     @Column(name = "vending_price", length = 40, nullable = false)
     private BigDecimal vending_price;
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+
 
     public String getName() {
         return name;

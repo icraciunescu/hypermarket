@@ -10,10 +10,6 @@ import java.util.Set;
 @Table(name = "employees", schema = "hypermarket")
 public class Employee {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
 
     @Column(name = "firstName", length = 40, nullable = false)
     private String firstName;
@@ -41,13 +37,8 @@ public class Employee {
     @OneToMany(mappedBy = "manager")
     private Set<Employee> subordinates = new HashSet<>();
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+
 
 
 //fhehrshiefiehrkesheheruheruu
