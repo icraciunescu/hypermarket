@@ -1,7 +1,6 @@
 package ro.sda.hypermarket.core.entity;
 
 import ro.sda.hypermarket.core.base.BaseEntity;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 
@@ -85,5 +84,16 @@ public class Product extends BaseEntity {
     @Override
     public int hashCode() {
         return super.hashCode();
+    }
+
+    @Id
+    private Long id;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

@@ -1,7 +1,6 @@
 package ro.sda.hypermarket.core.entity;
 
 import ro.sda.hypermarket.core.base.BaseEntity;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.HashSet;
@@ -72,5 +71,16 @@ public class Employee extends BaseEntity {
                 ", city='" + city + '\'' +
                 ", manager=" + manager +
                 '}';
+    }
+
+    @Id
+    private Long id;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

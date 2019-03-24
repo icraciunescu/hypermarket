@@ -1,19 +1,16 @@
 package ro.sda.hypermarket.core.entity;
 
 import ro.sda.hypermarket.core.base.BaseEntity;
-
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "client", schema = "hypermarket")
-public class Client  extends BaseEntity {
+public class Client extends BaseEntity {
 
 
     @Column(name = "name", length = 40, nullable = false)
     private String name;
-
-
 
     public String getName() {
         return name;
@@ -35,5 +32,16 @@ public class Client  extends BaseEntity {
     @Override
     public int hashCode() {
         return Objects.hash(super.getId(), name);
+    }
+
+    @Id
+    private Long id;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

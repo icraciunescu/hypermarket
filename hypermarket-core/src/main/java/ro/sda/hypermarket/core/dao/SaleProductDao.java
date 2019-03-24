@@ -1,7 +1,6 @@
 package ro.sda.hypermarket.core.dao;
 
 import org.hibernate.Session;
-import ro.sda.hypermarket.core.entity.SaleProduct;
 
 import java.util.List;
 

@@ -1,7 +1,6 @@
 package ro.sda.hypermarket.core.entity;
 
 import ro.sda.hypermarket.core.base.BaseEntity;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -54,7 +53,6 @@ public class Sales extends BaseEntity {
         this.employee_id = employee_id;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -65,10 +63,12 @@ public class Sales extends BaseEntity {
                 Objects.equals(sale_date, sales.sale_date) &&
                 Objects.equals(client_id, sales.client_id) &&
                 Objects.equals(employee_id, sales.employee_id);
+
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(super.getId(), number, sale_date, client_id, employee_id);
     }
+
 }

@@ -2,7 +2,6 @@ package ro.sda.hypermarket.core.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ro.sda.hypermarket.core.entity.Sales;
 
 import java.util.List;
 

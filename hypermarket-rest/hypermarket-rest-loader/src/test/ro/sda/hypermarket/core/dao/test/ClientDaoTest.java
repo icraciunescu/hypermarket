@@ -27,16 +27,16 @@ public class ClientDaoTest {
 
     @Test
     public void testRead(){
-        Client cli = clientDao.getById(1L);
+        Client cli = clientDao.getById(8L);
         Long actual = cli.getId();
-        Long expected = 1L;
+        Long expected = 8L;
         System.out.println(cli.toString());
         Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void testUpdate(){
-        Client fromDb = clientDao.getById(3l);
+        Client fromDb = clientDao.getById(8L);
         fromDb.setName("Vasile");
         Client cli = clientDao.updateClient(fromDb);
         System.out.println("Update " + cli + " to:");

@@ -1,7 +1,5 @@
 package ro.sda.hypermarket.core.service;
 
-import ro.sda.hypermarket.core.entity.Sales;
-
 import java.util.List;
 
 public interface SalesService {
