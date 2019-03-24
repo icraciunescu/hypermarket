@@ -1,13 +1,14 @@
 package ro.sda.hypermarket.core.entity;
 
+import ro.sda.hypermarket.core.base.BaseEntity;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
 @Table(name = "sales", schema = "hypermarket")
-public class Sales {
-
+public class Sales extends BaseEntity {
 
     @Column(name = "number", length = 40, nullable = false)
     private Long number;
@@ -58,7 +59,7 @@ public class Sales {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Sales sales = (Sales) o;
-        return Objects.equals(id, sales.id) &&
+        return Objects.equals(super.getId(), sales.getId()) &&
                 Objects.equals(number, sales.number) &&
                 Objects.equals(sale_date, sales.sale_date) &&
                 Objects.equals(client_id, sales.client_id) &&
@@ -67,6 +68,6 @@ public class Sales {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, number, sale_date, client_id, employee_id);
+        return Objects.hash(super.getId(), number, sale_date, client_id, employee_id);
     }
 }

@@ -1,11 +1,13 @@
 package ro.sda.hypermarket.core.entity;
 
+import ro.sda.hypermarket.core.base.BaseEntity;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "products", schema = "hypermarket")
-public class Product {
+public class Product extends BaseEntity {
 
 
     @Column(name = "name", length = 40, nullable = false)
@@ -25,9 +27,6 @@ public class Product {
 
     @Column(name = "vending_price", length = 40, nullable = false)
     private BigDecimal vending_price;
-
-
-
 
     public String getName() {
         return name;
