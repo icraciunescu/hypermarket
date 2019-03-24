@@ -14,53 +14,53 @@ import ro.sda.hypermarket.core.service.SupplierService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:/spring-config/spring-root.xml")
 @Transactional
-public class SupplierDaoTest{
+public class SupplierDaoTest {
 
-@Autowired
-private SupplierService supplierService;
+    @Autowired
+    private SupplierService supplierService;
 
 
-@Test
-@Rollback(false)
-public void testCreate(){
-        Supplier suppplier=new Supplier();
+    @Test
+    @Rollback(false)
+    public void testCreate() {
+        Supplier suppplier = new Supplier();
         suppplier.setName("india");
         suppplier.setCity("podu iloaie");
         suppplier.setContact_no("034332323");
-        supplierService.createSupplier(suppplier,false);
+        supplierService.createSupplier(suppplier, false);
         Assert.assertNotNull(suppplier);
-        }
+    }
 
-@Test
-@Rollback(false)
-public void testRead(){
-        Supplier sup=supplierService.getById(8L);
-        Long actual=sup.getId();
-        Long expected=8L;
+    @Test
+    @Rollback(false)
+    public void testRead() {
+        Supplier sup = supplierService.getById(8L);
+        Long actual = sup.getId();
+        Long expected = 8L;
         System.out.println(sup.toString());
-        Assert.assertEquals(expected,actual);
-        }
+        Assert.assertEquals(expected, actual);
+    }
 
-@Test
-@Rollback(false)
-public void testUpdate(){
-        Supplier fromDb=supplierService.getById(8L);
+    @Test
+    @Rollback(false)
+    public void testUpdate() {
+        Supplier fromDb = supplierService.getById(8L);
         fromDb.setName("india");
-        Supplier sup=supplierService.updateSupplier(fromDb);
-        System.out.println("Update "+sup+" to:");
+        Supplier sup = supplierService.updateSupplier(fromDb);
+        System.out.println("Update " + sup + " to:");
         sup.setName("china");
         supplierService.updateSupplier(sup);
-        Supplier expected=supplierService.updateSupplier(sup);
-        Supplier actual=sup;
+        Supplier expected = supplierService.updateSupplier(sup);
+        Supplier actual = sup;
         System.out.println(expected.toString());
-        Assert.assertEquals(expected,actual);
-        }
+        Assert.assertEquals(expected, actual);
+    }
 
-@Test
-@Rollback(false)
-public void testDelete(){
-        Supplier supplier=supplierService.getById(3L);
+    @Test
+    @Rollback(false)
+    public void testDelete() {
+        Supplier supplier = supplierService.getById(3L);
         supplierService.deleteSupplier(supplier);
         Assert.assertNotNull(supplier);
-        }
-        }
+    }
+}
