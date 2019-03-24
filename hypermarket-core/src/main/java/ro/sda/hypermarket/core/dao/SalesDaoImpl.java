@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import ro.sda.hypermarket.core.entity.Sales;
 
 import javax.persistence.criteria.CriteriaQuery;
 import java.util.ArrayList;
