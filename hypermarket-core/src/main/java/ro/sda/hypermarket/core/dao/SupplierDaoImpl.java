@@ -18,7 +18,6 @@ public class SupplierDaoImpl implements SupplierDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-
     public Session getCurrentSession(){
         return sessionFactory.getCurrentSession();
     }

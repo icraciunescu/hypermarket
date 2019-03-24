@@ -7,7 +7,7 @@ public interface ProductCategoryService {
 
     ProductCategory getById(Long id);
     List<ProductCategory> getAll();
-    ProductCategory createProductCategory(ProductCategory productCategory);
+    ProductCategory createProductCategory(ProductCategory productCategory, boolean useHibernate);
     ProductCategory updateProductCategory(ProductCategory productCategory);
     void deleteProductCategory(ProductCategory productCategory);
 

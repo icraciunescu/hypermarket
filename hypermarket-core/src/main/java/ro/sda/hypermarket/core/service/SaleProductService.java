@@ -7,7 +7,7 @@ public interface SaleProductService {
 
     SaleProduct getById(Long id);
     List<SaleProduct> getAll();
-    SaleProduct createSaleProduct(SaleProduct saleProduct);
+    SaleProduct createSaleProduct(SaleProduct saleProduct, boolean useHibernate);
     SaleProduct updateSaleProduct(SaleProduct saleProduct);
     void deleteSaleProduct(SaleProduct saleProduct);
 
